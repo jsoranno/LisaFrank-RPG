@@ -1,7 +1,17 @@
 body {
-    background-image: url("paper.gif");
+    background-image: url("../../assets/images/back3.png");
 }
 
 .jumbotron {
-	background-image: url("assets/images/uglybusiness.png");
+	text-align: center;
+	background-color: transparent;
+	color:white;
+}
+
+.thumbnail {
+	border:none !important;
+    background-color: transparent !important;
+    box-shadow:none !important;
+    text-align: center;
+    color:white;
 }

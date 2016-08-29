@@ -12,6 +12,8 @@
 
 $(document).ready(function(){
 
+// VARIABLES
+// ==========================================================================
 var starkPlay = {
 	hp: 500,
 	ap: 35,
@@ -30,14 +32,46 @@ var tarPlay = {
 	cap: 50
 } //end tarPlay
 
-
+// GAME PLAY
+	// ==============================================================================	
 	$('img').on("click", function() {
-
-		
+		// player choses characater as player1
 		if ($(this).hasClass("stark")) {
-				console.log("stark");
-		
+				console.log("Main player is Stark");
+				this.setAttribute('class', 'player1');
+				$('stark').html("<button> 'Player 1 ATTACK' </button>");
+				$('h2').html("<h2> 'Who will win the iron throne?' </h2>");
+				swal({   
+					title: "Choose your opponent",   
+					text: "Choose your opponent.",         
+					confirmButtonColor: "#cc00ff",     
+					closeOnConfirm: false });
+				//if opponent is baratheon - then 
+					// .fadeOutDown targaryan
+					// show HP fade with each click of attack button
+					// Would it be better to have the user click a character, change the button to say Player 1 then immediately pick the oppenent and say Opponent, then click a Fight button? How to measure health after each attack?
+		if ($(this).hasClass("baratheon")) {
+				console.log("Main player is Baratheon");
+				this.setAttribute('class', 'player1');
+				$('baratheon').html("<button> 'Player 1 ATTACK' </button>");
+				swal({   
+					title: "Choose your opponent",   
+					text: "Choose your opponent.",         
+					confirmButtonColor: "#cc00ff",     
+					closeOnConfirm: false });
+		if ($(this).hasClass("targaryan")) {
+				console.log("Main player is Targaryan");
+				this.setAttribute('class', 'player1');
+				$('targaryan').html("<button> 'Player 1 ATTACK' </button>");
+				swal({   
+					title: "Choose your opponent",   
+					text: "Choose your opponent.",         
+					confirmButtonColor: "#cc00ff",     
+					closeOnConfirm: false });		
+		} //end if Player 1	
 
-		} //end if class stark		
 	}) // end on click
+				// TO RELOAD GAME: 
+				// function(){  
+				// location.reload();}
 }) //end document ready

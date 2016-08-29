@@ -15,3 +15,8 @@ body {
     text-align: center;
     color:white;
 }
+.player1 {
+	border:green;
+	border-radius: 2px;
+	border-width: 10px;
+}

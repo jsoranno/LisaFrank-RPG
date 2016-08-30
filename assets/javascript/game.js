@@ -10,10 +10,10 @@
 // if main loses, alert lost and reset
 // if main wins again, alert wins, reset
 
-$(document).ready(function(){
 
 // VARIABLES
 // ==========================================================================
+var winter = {
 
 	var starkPoints = {
 		hp: "500",
@@ -28,26 +28,36 @@ $(document).ready(function(){
 	} //end barPlay
 
 	var tarPoints = {
-	hp: "475",
-	ap: "50",
-	cap: "50"
+		hp: "475",
+		ap: "50",
+		cap: "50"
 	} //end tarPlay
 
-// GAME PLAY
+	var battle = {
+		house: "",
+		houseHP: 0,
+		houseAP: 0,
+		counterAP: 0,
+		vsHouse: [],
+		vsHouseLeft: true
+	}
+
+// FUNCTION DECLARATIONS
 	// ==============================================================================	
-	$('img').on("click", function() {
-		// player choses characater as player1
+	// 
+		// player choses House
+	houseChoice: function(h){
 		if ($(this).hasClass("stark")) {
 				console.log("Main player is Stark");
 				this.setAttribute('class', 'player1');
 				$('stark').html("<h3> 'Player 1 ATTACK' </h3>");
-				$('h2').html("<h2> Who will win the iron throne? </h2>");
+				$('h2').html("<h2> Will House Stark win the iron throne? </h2>");
 				// swal({   
 				// 	title: "Choose your opponent",   
 				// 	text: "Choose your opponent.",         
 				// 	confirmButtonColor: "#cc00ff",     
 				// 	closeOnConfirm: false });
-			};
+			};//end of stark
 				//if opponent is baratheon - then 
 					// .fadeOutDown targaryan
 					// show HP fade with each click of attack button
@@ -56,28 +66,33 @@ $(document).ready(function(){
 				console.log("Main player is Baratheon");
 				this.setAttribute('class', 'player1');
 				$('baratheon').html("<h3> 'Player 1 ATTACK' </h3>");
-				$('h2').html("<h2> 'Who will win the iron throne?' </h2>");
+				$('h2').html("<h2> 'Will House Baratheon win the iron throne?' </h2>");
 				// swal({   
 				// 	title: "Choose your opponent",   
 				// 	text: "Choose your opponent.",         
 				// 	confirmButtonColor: "#cc00ff",     
 				// 	closeOnConfirm: false });
-			};
+			}; //end of baratheon
 		if ($(this).hasClass("targaryan")) {
 				console.log("Main player is Targaryan");
 				this.setAttribute('class', 'player1');
 				$('targaryan').html("<h3> 'Player 1 ATTACK' </h3>");
-				$('h2').html("<h2> 'Who will win the iron throne?' </h2>");
+				$('h2').html("<h2> 'Will House Targaryan win the iron throne?' </h2>");
 				// swal({   
 				// 	title: "Choose your opponent",   
 				// 	text: "Choose your opponent.",         
 				// 	confirmButtonColor: "#cc00ff",     
 				// 	closeOnConfirm: false });
-			};		
-		}); //end if Player 1	
+			}; //end of targaryan		
+}; //end winter
 
-	}); // end on click
+// FUNCTION CALLS
+	// ==============================================================================	
+
+$(document).ready(function()
+	$('img').on("click", function() {
+		}); // end on click
 				// TO RELOAD GAME: 
 				// function(){  
 				// location.reload();}
-// }); //end document ready
+}; //end document ready

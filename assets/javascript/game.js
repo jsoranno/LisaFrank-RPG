@@ -14,23 +14,24 @@ $(document).ready(function(){
 
 // VARIABLES
 // ==========================================================================
-var starkPlay = {
-	hp: 500,
-	ap: 35,
-	cap: 50
-} //end starkPlay
 
-var barPlay = {
-	hp: 450,
-	ap: 70,
-	cap: 25
-} //end barPlay
+	var starkPoints = {
+		hp: "500",
+		ap: "35",
+		cap: "50"
+	} //end starkPlay
 
-var tarPlay = {
-	hp: 475,
-	ap: 50,
-	cap: 50
-} //end tarPlay
+	var barPoints = {
+		hp: "450",
+		ap: "70",
+		cap: "25"
+	} //end barPlay
+
+	var tarPoints = {
+	hp: "475",
+	ap: "50",
+	cap: "50"
+	} //end tarPlay
 
 // GAME PLAY
 	// ==============================================================================	
@@ -40,7 +41,7 @@ var tarPlay = {
 				console.log("Main player is Stark");
 				this.setAttribute('class', 'player1');
 				$('stark').html("<h3> 'Player 1 ATTACK' </h3>");
-				$('h2').html("<h2> 'Who will win the iron throne?' </h2>");
+				$('h2').html("<h2> Who will win the iron throne? </h2>");
 				// swal({   
 				// 	title: "Choose your opponent",   
 				// 	text: "Choose your opponent.",         

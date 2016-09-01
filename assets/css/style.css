@@ -1,6 +1,15 @@
+@font-face {
+    font-family: "GOTfont";
+    src: url(../fonts/GOTfont.ttf);
+}
+
 body {
-    font-family: 'Cinzel Decorative', cursive;
     background-image: url("../../assets/images/back3.png");
+    font-family: "GOTfont";
+}
+
+p {
+	font-family: "GOTfont";
 }
 
 .jumbotron {

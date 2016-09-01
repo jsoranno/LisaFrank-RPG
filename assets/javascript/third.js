@@ -53,16 +53,19 @@ chooseHouse: function(houseClicked){
 }, //end chooseHouse
 
 fight: function(){
-	if (this.house != "" && this.opponent != "" && this.counterHP > 0 && this.houseAP > 0) {
+	if (this.house != "" && this.opponent != "" && this.counterHP > 0 && this.houseHP > 0) {
 			this.counterHP = Math.max(0, this.counterHP - this.houseAP);
+			console.log("Let's fight")
+			
 			} //end if
-	else if(this.counterhp == 0) {
-				this.houseAP = Math.max(0, this.houseAP - this.counterAP);
+	else if(this.counterHP == 0) {
+			this.houseAP = Math.max(0, this.houseAP - this.counterAP);
+			console.log("You won! Choose your next opponent!");
 			} //end else if
 	//else if more opponents are left and houseHP is >0, choose next opponent
 	//else if houseHP == 0 and there are more opponents, you lost
-	else if (this.deadHouses.length > 3) {
-				alert("You win!");				
+	else if (this.houseHP == 0) {
+			console.log("You lost.");				
 			} //end else if
 } //end fight 
 
@@ -72,4 +75,9 @@ fight: function(){
 $('.house').on('click', function(){
 	console.log("You chose " + $(this).data("name")); //test what was clicked
 	battle.chooseHouse($(this).data("name"));
+	$("battle").animate({top:"-=400px"}, "normal"); //why won't you move up you silly pictures?
+});
+$('.fight').on('click', function(){
+	console.log("You clicked attack!");
+	battle.fight();
 });

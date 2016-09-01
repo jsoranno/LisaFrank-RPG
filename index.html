@@ -29,14 +29,24 @@
     </div>
   </div> 
 
-<div class="row">
-  <div class="battle">
+  <!-- BATTLE ARENA -->
+<div class="row gameplay">
+  <div id="player" class="battle gameplay col-sm-4">
+    <!-- placeholder for player 1 house -->
+  </div>
+  <div class="battle gameplay col-sm-4">
     <button class="battle btn-danger btn-lg">FIGHT!</button>
   </div>
+  <div id="defender" class="battle gameplay col-sm-4">
+    <!-- placeholder for player 2 house -->
+  </div>
 </div>
+
+
+
   <!-- Choose Your House with clickable pictures -->
-  <div class="row">
-      <div class="col-sm-4">
+  <div class="row gameplay">
+      <div class="col-sm-4 player">
         <div class="thumbnail">
           <img src="assets/images/crown.png" alt="baratheon" data-name="baratheon" class="baratheon">
           <div class="baratheon">
@@ -45,7 +55,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 player">
         <div class="thumbnail">
           <img src="assets/images/stark.png" alt="stark" data-name"stark" class="stark">
           <div class="stark">
@@ -54,7 +64,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-4 player">
         <div class="thumbnail">
           <img src="assets/images/targaryan.png" alt="targaryan" data-name="targaryan" class="targaryan">
           <div class="targaryan">

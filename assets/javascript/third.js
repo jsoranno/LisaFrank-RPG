@@ -6,8 +6,8 @@ var battle = {
 		houseStark: {name: "Stark", hp: 500, ap: 35, cap: 50},
 		houseBar: {name: "Baratheon", hp: 450, ap: 70, cap: 25},
 		houseTar: {name: "Targaryan", hp: 475, ap: 50, cap: 15},
-		houseBar2: {name: "Baratheonandon", hp: 470, ap:40, cap:40}
-		} //end of houses
+		houseBar2: {name: "Baratheonandon", hp: 470, ap:40, cap:40},
+		}, //end of houses
 	
 	house: "",
 	houseHP: 0,
@@ -19,7 +19,7 @@ var battle = {
 	
 	mainHouse: false,
 	vsHouse: false,
-	vsHouseLeft: true
+	vsHouseLeft: true,
 
 
 // FUNCTION DECLARATIONS
@@ -38,7 +38,7 @@ chooseHouse: function(){
 		this.counterHP = this.houses[this.house].cap;
 		vsHouse = true;
 	} //end else if
-}; //end chooseHouse
+}, //end chooseHouse
 
 fight: function(){
 	if (this.house != "" && this.opponent != "" && this.counterHP > 0 && this.houseAP > 0) {
@@ -50,8 +50,8 @@ fight: function(){
 	else if (this.houses.length < 1 && this.counterHP == 0) {
 				alert("You win!");				
 			} //end else if
-}; //end fight 
+} //end fight 
 
-}; // end battle
+} // end battle
 // FUNCTION CALLS
 	// ==============================================================================	

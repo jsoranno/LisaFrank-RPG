@@ -19,6 +19,7 @@ var battle = {
 	
 	mainHouse: false,
 	vsHouse: false,
+	deadHouses:[],
 	vsHouseLeft: true,
 
 
@@ -31,12 +32,14 @@ chooseHouse: function(){
 		this.houseHP = this.houses[this.house].hp;
 		this.houseAP = this.houses[this.house].ap;
 		mainHouse = true;
+		deadHouses.push(this.houses[this.house]);
 	} //end if mainHouse
 	else if (vsHouse == false && mainHouse == true){
 		this.vsHouse = VH;
 		this.counterHP = this.houses[this.house].hp;
 		this.counterHP = this.houses[this.house].cap;
 		vsHouse = true;
+		deadHouses.push(this.houses[this.house]);
 	} //end else if
 }, //end chooseHouse
 
@@ -45,7 +48,7 @@ fight: function(){
 			this.counterHP = Math.max(0, this.counterHP - this.houseAP);
 			} //end if
 	else if(this.counterhp == 0) {
-				this.houseAP = Math.max(0, this.houseAP - game.houses[this.opponent].cap);
+				this.houseAP = Math.max(0, this.houseAP - this.counterAP);
 			} //end else if
 	else if (this.houses.length < 1 && this.counterHP == 0) {
 				alert("You win!");				

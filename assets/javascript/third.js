@@ -64,4 +64,6 @@ fight: function(){
 	// ==============================================================================	
 $('.house').on('click', function(){
 	console.log("You chose " + $(this).data("name"));
+	house = ($(this).data("name"));
+	console.log(house);
 });

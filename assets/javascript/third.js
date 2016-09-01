@@ -9,11 +9,11 @@ var battle = {
 		houseBar2: {name: "Baratheonandon", hp: 470, ap:40, cap:40},
 		}, //end of houses
 	
-	house: "",
+	house: null,
 	houseHP: 0,
 	houseAP: 0,
 	
-	opponent: "",
+	opponent: null,
 	counterHP: 0,
 	counterAP: 0,
 	
@@ -26,20 +26,21 @@ var battle = {
 // FUNCTION DECLARATIONS
 // ==============================================================================	 
 
-chooseHouse: function(){
-	if (mainHouse == false) {
-		this.house = MH;
+chooseHouse: function(houseClicked){
+	if (this.house === null) {
+		this.house = ($(this).data("name"));
+		console.log(this.house); //test what main player
 		this.houseHP = this.houses[this.house].hp;
-		this.houseAP = this.houses[this.house].ap;
-		mainHouse = true;
+		this.thishouseAP = this.houses[this.house].ap;
+		this.mainHouse = true;
 		//add this house to the deadHouses array
 		//? battle.deadHouses.push(battle.houses.indexof;
 	} //end if mainHouse
-	else if (vsHouse == false && mainHouse == true){
-		this.vsHouse = VH;
+	else if (house != null && opponent === null){
+		this.vsHouse = ($(this).data("name"));
 		this.counterHP = this.houses[this.house].hp;
 		this.counterHP = this.houses[this.house].cap;
-		vsHouse = true;
+		this.vsHouse = true;
 		//add this house to the deadHouses array
 		//? battle.deadHouses.push(battle.houses.indexof;
 	} //end else if
@@ -63,7 +64,6 @@ fight: function(){
 // FUNCTION CALLS
 	// ==============================================================================	
 $('.house').on('click', function(){
-	console.log("You chose " + $(this).data("name"));
-	house = ($(this).data("name"));
-	console.log(house);
+	console.log("You chose " + $(this).data("name")); //test what was clicked
+	battle.chooseHouse($(this).data("name"));
 });

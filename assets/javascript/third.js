@@ -3,10 +3,10 @@
 var battle = {
 	
 	houses: {
-		houseStark: {name: "stark", hp: 500, ap: 35, cap: 50},
-		houseBar: {name: "baratheon", hp: 450, ap: 70, cap: 25},
-		houseTar: {name: "targaryan", hp: 475, ap: 50, cap: 15},
-		houseBar2: {name: "baratheonandon", hp: 470, ap:40, cap:40},
+		stark: {name: "stark", hp: 500, ap: 35, cap: 50},
+		baratheon: {name: "baratheon", hp: 450, ap: 70, cap: 25},
+		targaryan: {name: "targaryan", hp: 475, ap: 50, cap: 15},
+		baratheonandon: {name: "baratheonandon", hp: 470, ap:40, cap:40},
 		}, //end of houses
 	
 	house: null,
@@ -36,16 +36,19 @@ chooseHouse: function(houseClicked){
 		console.log(this.houseAP); //test what main player ap is
 		this.mainHouse = true;
 		console.log(this.mainHouse);
-		//add this house to the deadHouses array
-		//? battle.deadHouses.push(battle.houses.indexof;
+		//add this house to the deadHouses array so we can't use it again until game is reset
 	} //end if mainHouse
-	else if (house != null && opponent === null){
-		this.vsHouse = ($(this).data("name"));
-		this.counterHP = this.houses[this.house].hp;
-		this.counterHP = this.houses[this.house].cap;
-		this.vsHouse = true;
+	else if (this.house != null && this.opponent === null){
+		this.opponent = (houseClicked);
+		console.log(this.opponent); //test who opponent is
+		this.counterHP = this.houses[this.opponent].hp;
+		console.log(this.counterHP); //test what counter HP is
+		this.counterAP = this.houses[this.opponent].cap;
+		console.log(this.counterAP);
+		this.vsHouse = true; 
+		console.log(this.vsHouse); //test if vsHouse is true
 		//add this house to the deadHouses array
-		//? battle.deadHouses.push(battle.houses.indexof;
+		//add this house to the deadHouses array so we can't use it again until game is reset
 	} //end else if
 }, //end chooseHouse
 

@@ -32,14 +32,16 @@ chooseHouse: function(){
 		this.houseHP = this.houses[this.house].hp;
 		this.houseAP = this.houses[this.house].ap;
 		mainHouse = true;
-		battle.deadHouses.push(battle.(this.houses[this.house]));
+		//add this house to the deadHouses array
+		//? battle.deadHouses.push(battle.houses.indexof;
 	} //end if mainHouse
 	else if (vsHouse == false && mainHouse == true){
 		this.vsHouse = VH;
 		this.counterHP = this.houses[this.house].hp;
 		this.counterHP = this.houses[this.house].cap;
 		vsHouse = true;
-		battle.deadHouses.push(battle.(this.houses[this.house]));
+		//add this house to the deadHouses array
+		//? battle.deadHouses.push(battle.houses.indexof;
 	} //end else if
 }, //end chooseHouse
 
@@ -50,6 +52,8 @@ fight: function(){
 	else if(this.counterhp == 0) {
 				this.houseAP = Math.max(0, this.houseAP - this.counterAP);
 			} //end else if
+	//else if more opponents are left and houseHP is >0, choose next opponent
+	//else if houseHP == 0 and there are more opponents, you lost
 	else if (this.deadHouses.length > 3) {
 				alert("You win!");				
 			} //end else if

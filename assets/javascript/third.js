@@ -32,14 +32,14 @@ chooseHouse: function(){
 		this.houseHP = this.houses[this.house].hp;
 		this.houseAP = this.houses[this.house].ap;
 		mainHouse = true;
-		deadHouses.push(this.houses[this.house]);
+		battle.deadHouses.push(battle.(this.houses[this.house]));
 	} //end if mainHouse
 	else if (vsHouse == false && mainHouse == true){
 		this.vsHouse = VH;
 		this.counterHP = this.houses[this.house].hp;
 		this.counterHP = this.houses[this.house].cap;
 		vsHouse = true;
-		deadHouses.push(this.houses[this.house]);
+		battle.deadHouses.push(battle.(this.houses[this.house]));
 	} //end else if
 }, //end chooseHouse
 

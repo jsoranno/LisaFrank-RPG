@@ -59,6 +59,9 @@ fight: function(){
 			} //end else if
 } //end fight 
 
-} // end battle
+}; // end battle
 // FUNCTION CALLS
 	// ==============================================================================	
+$('.house').on('click', function(){
+	console.log("You chose " + $(this).data("name"));
+});

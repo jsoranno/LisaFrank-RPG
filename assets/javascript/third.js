@@ -3,10 +3,10 @@
 var battle = {
 	
 	houses: {
-		houseStark: {name: "Stark", hp: 500, ap: 35, cap: 50},
-		houseBar: {name: "Baratheon", hp: 450, ap: 70, cap: 25},
-		houseTar: {name: "Targaryan", hp: 475, ap: 50, cap: 15},
-		houseBar2: {name: "Baratheonandon", hp: 470, ap:40, cap:40},
+		houseStark: {name: "stark", hp: 500, ap: 35, cap: 50},
+		houseBar: {name: "baratheon", hp: 450, ap: 70, cap: 25},
+		houseTar: {name: "targaryan", hp: 475, ap: 50, cap: 15},
+		houseBar2: {name: "baratheonandon", hp: 470, ap:40, cap:40},
 		}, //end of houses
 	
 	house: null,
@@ -28,11 +28,14 @@ var battle = {
 
 chooseHouse: function(houseClicked){
 	if (this.house === null) {
-		this.house = ($(this).data("name"));
+		this.house = (houseClicked);
 		console.log(this.house); //test what main player
-		this.houseHP = this.houses[this.house].hp;
-		this.thishouseAP = this.houses[this.house].ap;
+		this.houseHP = (this.houses[this.house]).hp; //how to take houseClicked and connect this to array?
+		console.log(this.houseHP); //test what main player hp is
+		this.houseAP = this.houses[this.house].ap;
+		console.log(this.houseAP); //test what main player ap is
 		this.mainHouse = true;
+		console.log(this.mainHouse);
 		//add this house to the deadHouses array
 		//? battle.deadHouses.push(battle.houses.indexof;
 	} //end if mainHouse

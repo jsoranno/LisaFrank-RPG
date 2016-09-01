@@ -50,7 +50,7 @@ fight: function(){
 	else if(this.counterhp == 0) {
 				this.houseAP = Math.max(0, this.houseAP - this.counterAP);
 			} //end else if
-	else if (this.houses.length < 1 && this.counterHP == 0) {
+	else if (this.deadHouses.length > 3) {
 				alert("You win!");				
 			} //end else if
 } //end fight 
